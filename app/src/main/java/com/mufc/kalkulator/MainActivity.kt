@@ -12,7 +12,7 @@ var funkcija="nema"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+//broevi
         button1.setOnClickListener{
             if(prvBroj==0){
                 prvBroj=1
@@ -140,6 +140,7 @@ var funkcija="nema"
             }
             rezultat.text=prvBroj.toString()
         }
+        //operacii
     plus.setOnClickListener {
     vtorBroj=prvBroj
         prvBroj=0
@@ -172,7 +173,33 @@ var funkcija="nema"
                 funkcija="nema"
 
             }
+            if(funkcija=="minus"){
 
+                rez=vtorBroj-prvBroj
+                rezultat.text=rez.toString()
+                prvBroj=0
+                vtorBroj=0
+                funkcija="nema"
+
+            }
+            if(funkcija=="po"){
+
+                rez=vtorBroj*prvBroj
+                rezultat.text=rez.toString()
+                prvBroj=0
+                vtorBroj=0
+                funkcija="nema"
+
+            }
+            if(funkcija=="deleno"){
+
+                rez=vtorBroj/prvBroj
+                rezultat.text=rez.toString()
+                prvBroj=0
+                vtorBroj=0
+                funkcija="nema"
+
+            }
 
         }
 
