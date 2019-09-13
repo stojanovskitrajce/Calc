@@ -164,6 +164,13 @@ var funkcija="nema"
         ednakvo.setOnClickListener {
             var rez=0
             if(funkcija=="plus"){
+
+                rez=vtorBroj+prvBroj
+                rezultat.text=rez.toString()
+                prvBroj=0
+                vtorBroj=0
+                funkcija="nema"
+
             }
 
 
