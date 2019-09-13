@@ -163,7 +163,9 @@ var funkcija="nema"
         }
         ednakvo.setOnClickListener {
             var rez=0
-            if(funkcija=="plus"){}
+            if(funkcija=="plus"){
+
+            }
 
 
         }
