@@ -142,25 +142,43 @@ var funkcija="nema"
         }
         //operacii
     plus.setOnClickListener {
+        if (vtorBroj==0){
     vtorBroj=prvBroj
         prvBroj=0
-        funkcija="plus"
+        funkcija="plus"}
+        else{
+            textView.text="vcituvanje poveke od edna operacija ne e mozna"
+        }
 
     }
         minus.setOnClickListener {
-            vtorBroj=prvBroj
-            prvBroj=0
-            funkcija="minus"
+            if (vtorBroj==0) {
+                vtorBroj = prvBroj
+                prvBroj = 0
+                funkcija = "minus"
+            }
+            else{
+                textView.text="vcituvanje poveke od edna operacija ne e mozna"
+            }
         }
         po.setOnClickListener {
+            if (vtorBroj==0) {
             vtorBroj=prvBroj
             prvBroj=0
             funkcija="po"
+            }
+            else{
+                textView.text="vcituvanje poveke od edna operacija ne e mozna"
+            }
         }
         deleno.setOnClickListener {
-            vtorBroj=prvBroj
-            prvBroj=0
-            funkcija="deleno"
+            if (vtorBroj == 0) {
+                vtorBroj = prvBroj
+                prvBroj = 0
+                funkcija = "deleno"
+            } else {
+                textView.text = "vcituvanje poveke od edna operacija ne e mozna"
+            }
         }
         ednakvo.setOnClickListener {
             var rez=0
