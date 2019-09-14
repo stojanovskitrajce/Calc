@@ -12,7 +12,28 @@ var funkcija="nema"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //kalkulacija fun
+        fun rezz(eden:Double,dva:Double):Double {
+            var ask=0.0
+            if (funkcija=="plus"){
+                ask = dva+eden
+            }
+            if (funkcija=="minus"){
+                ask = dva-eden
+            }
+            if (funkcija=="po"){
+                ask = dva*eden
+            }
+            if (funkcija=="deleno"){
+                ask = dva/eden
+            }
+            prvBroj=0
+            vtorBroj=0
+            funkcija="nema"
+            return ask
+        }
 //broevi
+
         button1.setOnClickListener{
             if(prvBroj==0){
                 prvBroj=1
@@ -140,6 +161,7 @@ var funkcija="nema"
             }
             rezultat.text=prvBroj.toString()
         }
+
         //operacii
     plus.setOnClickListener {
         if (vtorBroj==0){
@@ -147,7 +169,9 @@ var funkcija="nema"
         prvBroj=0
         funkcija="plus"}
         else{
-            textView.text="vcituvanje poveke od edna operacija ne e mozna"
+           vtorBroj=vtorBroj+prvBroj
+            prvBroj=0
+            rezultat.text=vtorBroj.toString()
         }
 
     }
@@ -158,7 +182,9 @@ var funkcija="nema"
                 funkcija = "minus"
             }
             else{
-                textView.text="vcituvanje poveke od edna operacija ne e mozna"
+                vtorBroj=vtorBroj-prvBroj
+                prvBroj=0
+                rezultat.text=vtorBroj.toString()
             }
         }
         po.setOnClickListener {
@@ -168,7 +194,9 @@ var funkcija="nema"
             funkcija="po"
             }
             else{
-                textView.text="vcituvanje poveke od edna operacija ne e mozna"
+                vtorBroj=vtorBroj*prvBroj
+                prvBroj=0
+                rezultat.text=vtorBroj.toString()
             }
         }
         deleno.setOnClickListener {
@@ -177,49 +205,20 @@ var funkcija="nema"
                 prvBroj = 0
                 funkcija = "deleno"
             } else {
-                textView.text = "vcituvanje poveke od edna operacija ne e mozna"
+                vtorBroj=vtorBroj/prvBroj
+                prvBroj=0
+                rezultat.text=vtorBroj.toString()
             }
         }
+
         ednakvo.setOnClickListener {
-            var rez=0
-            if(funkcija=="plus"){
+           val eden=prvBroj.toDouble()
+            val dva =vtorBroj.toDouble()
 
-                rez=vtorBroj+prvBroj
-                rezultat.text=rez.toString()
-                prvBroj=0
-                vtorBroj=0
-                funkcija="nema"
-
-            }
-            if(funkcija=="minus"){
-
-                rez=vtorBroj-prvBroj
-                rezultat.text=rez.toString()
-                prvBroj=0
-                vtorBroj=0
-                funkcija="nema"
-
-            }
-            if(funkcija=="po"){
-
-                rez=vtorBroj*prvBroj
-                rezultat.text=rez.toString()
-                prvBroj=0
-                vtorBroj=0
-                funkcija="nema"
-
-            }
-            if(funkcija=="deleno"){
-
-                rez=vtorBroj/prvBroj
-                rezultat.text=rez.toString()
-                prvBroj=0
-                vtorBroj=0
-                funkcija="nema"
-
-            }
+             rezultat.text=rezz(eden,dva).toString()
 
         }
+
 
     }
 }
